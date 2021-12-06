@@ -1,0 +1,75 @@
+order=['1.Small pizza','2.Medium pizza','3.Large Pizza',]
+addon=['1.pepperoni','2.extra cheese','3.pepperoni and cheese']
+slctitems=[]
+rate=[]
+for i in range(15) :
+  print('1.order')
+  print('3.to exit')
+  food= int(input("select your choice "))
+  if food == 1 :
+   for i in range(15):
+    print(order)
+    vg=int(input("which pizza do you want "))
+    if vg==1 : 
+      b=input("want any addons?")
+      if b=="yes":
+       print(addon)
+       c=int(input("select your addon "))
+       if c==1:
+         slctitems.append("small pizza with pepperoni")
+         rate.append("170")
+       if c==2:
+         slctitems.append("Small pizza with extra cheese")
+         rate.append("160")
+       if c==3:
+         slctitems.append("Small pizza with extra cheese & pepperoni")
+         rate.append("180")  
+      if b=="no" :  
+       slctitems.append("Small pizza")
+       rate.append("150")
+    elif vg==2:
+      b=input("want any addons?")
+      if b=="yes":
+       print(addon)
+       c=int(input("select your addon "))
+       if c==1:
+         slctitems.append("Medium pizza with pepperoni")
+         rate.append("230")
+       if c==2:
+         slctitems.append("Medium pizza with extra cheese")
+         rate.append("210")
+       if c==3:
+         slctitems.append("Medium pizza with extra cheese & pepperoni")
+         rate.append("240")  
+      if b=="no" :
+       slctitems.append("Medium pizza ")
+       rate.append("200 ") 
+    elif vg==3:
+      b=input("want any addons?")
+      if b=="yes":
+       print(addon)
+       c=int(input("select your addon "))
+       if c==1:
+         slctitems.append("Large pizza with pepperoni")
+         rate.append("280")
+       if c==2:
+         slctitems.append("Large pizza with extra cheese")
+         rate.append("260")
+       if c==3:
+         slctitems.append("Large pizza with extra cheese & pepperoni")
+         rate.append("290")  
+      if b=="no" :
+       slctitems.append("Large pizza ")
+       rate.append("250 ")
+    else :
+      break  
+  elif food ==3:
+    break          
+items= "\n".join("{} {}".format(x, y) for x, y in zip(slctitems,rate ))
+print(items)    
+for i in range(0, len(rate)):
+    rate[i] = int(rate[i])
+total=0
+for i in rate:
+  total=total+i    
+print("total=",total)
